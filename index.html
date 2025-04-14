@@ -3,9 +3,9 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ProChat - Informacje</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProChat – Informacje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,55 +14,132 @@
     }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+      background: #0d0d0d;
+      overflow-x: hidden;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 20px;
+      animation: fadeIn 1s ease forwards;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
     }
     .logo {
+      display: block;
+      margin: 0 auto 20px;
       width: 120px;
-      height: auto;
-      margin-bottom: 20px;
+      animation: floatIn 1s ease-in-out;
     }
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #00ffc6;
       text-align: center;
+      font-size: 2.5rem;
+      color: #00ffc6;
+      margin-bottom: 10px;
+      animation: fadeInUp 1s ease-in-out;
     }
     p {
-      max-width: 700px;
-      font-size: 1.1rem;
       text-align: center;
+      font-size: 1.1rem;
       margin-bottom: 30px;
+      animation: fadeInUp 1.5s ease-in-out;
     }
     ul {
       list-style: none;
       padding: 0;
-      max-width: 700px;
-      width: 100%;
     }
     li {
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: rgba(255, 255, 255, 0.1);
       margin: 10px 0;
       padding: 15px;
       border-radius: 10px;
       text-align: center;
+      transition: transform 0.3s, background-color 0.3s;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    li:hover {
+      background-color: rgba(0, 255, 204, 0.1);
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes floatIn {
+      0% {opacity: 0; transform: scale(0.5);}
+      100% {opacity: 1; transform: scale(1);}
     }
   </style>
 </head>
 <body>
-  <img src="ProChat.png" alt="ProChat Logo" class="logo" />
-  <h1>ProChat</h1>
-  <p>ProChat to zaawansowany bot Discord z wieloma funkcjami, który łączy w sobie prostotę i moc.</p>
-  <ul>
-    <li>/join – dołącza do kanału głosowego</li>
-    <li>/play [link/nazwa] – odtwarza muzykę</li>
-    <li>/skip – pomija aktualny utwór</li>
-    <li>/stop – zatrzymuje odtwarzanie</li>
-    <li>!radio – uruchamia radio 24/7</li>
-  </ul>
+  <canvas id="stars"></canvas>
+  <div class="container">
+    <img src="ProChat.png" alt="ProChat Logo" class="logo" />
+    <h1>ProChat</h1>
+    <p>ProChat to zaawansowany bot Discord z wieloma funkcjami, który łączy prostotę z mocą.</p>
+    <ul>
+      <li>/join – dołącza do kanału głosowego</li>
+      <li>/play [link/nazwa] – odtwarza muzykę</li>
+      <li>/skip – pomija aktualny utwór</li>
+      <li>/stop – zatrzymuje odtwarzanie</li>
+      <li>!radio – uruchamia radio 24/7</li>
+    </ul>
+  </div>
+  <script>
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function createStars(count) {
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          speed: Math.random() * 0.5 + 0.2
+        });
+      }
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#ffffff';
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+      requestAnimationFrame(drawStars);
+    }
+
+    createStars(150);
+    drawStars();
+  </script>
 </body>
 </html>
