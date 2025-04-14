@@ -1,78 +1,76 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informacje o ProChat</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informacje – ProChat</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
     }
     header {
-      background-color: #161b22;
-      padding: 20px;
       text-align: center;
+      margin-bottom: 2rem;
     }
     header h1 {
-      margin: 0;
-      color: #58a6ff;
+      font-size: 2.5rem;
+      color: #00ffee;
     }
-    main {
+    section {
       max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: #21262d;
-      border-radius: 10px;
+      width: 100%;
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 10px #00ffee44;
     }
     h2 {
-      color: #58a6ff;
+      color: #00ffee;
+      margin-top: 0;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      padding-left: 1.2rem;
     }
-    li {
-      margin-bottom: 10px;
-      background: #30363d;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #58a6ff;
-      color: #fff;
-      padding: 10px 20px;
+    a {
+      color: #00ffee;
       text-decoration: none;
-      border-radius: 5px;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ProChat - Informacje</h1>
+    <h1>ProChat – Informacje</h1>
+    <p>Twój niezawodny bot do Discorda.</p>
   </header>
-  <main>
+
+  <section>
     <h2>Opis bota</h2>
-    <p>ProChat to wszechstronny bot Discord, stworzony z myślą o zarządzaniu serwerem, zabawie i ułatwieniu codziennej komunikacji. Wszystko po polsku!</p>
+    <p>
+      ProChat to wielofunkcyjny bot Discord stworzony z myślą o prostocie, stylu i wygodzie.
+      Oferuje wiele funkcji moderacyjnych, muzycznych i społecznościowych – wszystko po polsku.
+    </p>
 
     <h2>Lista komend</h2>
     <ul>
-      <li><strong>/pomoc</strong> - Wyświetla listę dostępnych komend</li>
-      <li><strong>/ping</strong> - Sprawdza opóźnienie bota</li>
-      <li><strong>/avatar</strong> - Pokazuje avatar użytkownika</li>
-      <li><strong>/say [tekst]</strong> - Bot powtarza wpisany tekst</li>
-      <li><strong>/ban @użytkownik</strong> - Banuje użytkownika</li>
-      <li><strong>/kick @użytkownik</strong> - Wyrzuca użytkownika</li>
-      <li><strong>/clear [liczba]</strong> - Usuwa podaną ilość wiadomości</li>
+      <li><strong>/pomoc</strong> – pokazuje listę komend</li>
+      <li><strong>/play</strong> – odtwarza muzykę z YouTube</li>
+      <li><strong>/stop</strong> – zatrzymuje odtwarzanie muzyki</li>
+      <li><strong>/skip</strong> – pomija aktualny utwór</li>
+      <li><strong>/join</strong> – dołącza do kanału głosowego</li>
+      <li><strong>!radio</strong> – uruchamia radio 24/7</li>
     </ul>
 
-    <a href="index.html" class="button">Powrót do strony głównej</a>
-  </main>
+    <p>Bot jest w ciągłym rozwoju. Masz pomysł? Daj nam znać na serwerze <a href="https://discord.gg/c7gcHErE" target="_blank">supportu</a>.</p>
+  </section>
 </body>
 </html>
