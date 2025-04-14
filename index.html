@@ -1,66 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProChat - Informacje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 900px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        h1, h2 {
-            text-align: center;
-            color: #00ffcc;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background-color: rgba(255, 255, 255, 0.1);
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        img.logo {
-            max-width: 120px;
-            display: block;
-            margin: 0 auto 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ProChat – Informacje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+    .logo {
+      max-width: 150px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00ffff;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 10px 0;
+      padding: 12px 20px;
+      border-radius: 10px;
+    }
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="../ProChat.png" alt="ProChat Logo" class="logo" />
-        <h1>ProChat</h1>
-        <p style="text-align: center;">ProChat to zaawansowany bot Discord z wieloma funkcjami, który łączy w sobie prostotę i moc.</p>
-
-        <h2>Dostępne komendy:</h2>
-        <ul>
-            <li><strong>/help</strong> - Wyświetla listę dostępnych komend</li>
-            <li><strong>/ping</strong> - Pokazuje opóźnienie bota</li>
-            <li><strong>/play</strong> - Odtwarza muzykę z YouTube lub Spotify</li>
-            <li><strong>/stop</strong> - Zatrzymuje muzykę</li>
-            <li><strong>/skip</strong> - Pomija obecnie odtwarzany utwór</li>
-            <li><strong>/join</strong> - Bot dołącza do kanału głosowego</li>
-            <li><strong>!radio</strong> - Włącza radio 24/7</li>
-        </ul>
-    </div>
+  <div class="container">
+    <img src="./ProChat.png" alt="ProChat Logo" class="logo" />
+    <h1>ProChat</h1>
+    <p>ProChat to zaawansowany bot Discord z wieloma funkcjami, który łączy prostotę z mocą.</p>
+    
+    <h2>Lista komend</h2>
+    <ul>
+      <li>/join – Dołącza do kanału głosowego</li>
+      <li>/play [link lub tytuł] – Odtwarza muzykę</li>
+      <li>/skip – Pomija aktualnie graną piosenkę</li>
+      <li>/stop – Zatrzymuje muzykę i wychodzi</li>
+      <li>!radio – Włącza radio 24/7</li>
+    </ul>
+  </div>
 </body>
 </html>
